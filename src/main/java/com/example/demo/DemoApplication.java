@@ -19,6 +19,11 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 
 	}
+       
+	@GetMapping("/")
+        public String healthCheck(){
+                return "HEALTH CHECK OK!";
+        }
 
 	@GetMapping("/secured")
 	public Object secured(@LoggedInUser AppUser appUser){
@@ -50,5 +55,10 @@ public class DemoApplication {
 	@GetMapping("/fiapv2")
 	String turmav2(){
 		return "DEVOPS FIAP - VERSAO 3.0";
+	}
+	
+	@GetMapping("/aws")
+	String awsEnv(){
+		return "DEVOPS FIAP - Versão AWS";
 	}
 }	
